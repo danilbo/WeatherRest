@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+/staging.iml
+/mvnw.cmd
+/mvnw
+/HELP.md
+/.idea/
+/.mvn/

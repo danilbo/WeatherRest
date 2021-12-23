@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 /**
- * Main Controller
+ * Controller
  */
 
 @RestController
@@ -23,28 +23,12 @@ public class WeatherController {
     private WeatherService service;
 
     /**
-     * Method to get Temperature with date (received with ?param=...)
-     * Trying to get line from DB, if there is no line with current date,
-     * parsing yandex.ru and getting weather from the web page
+     * Method to get Temperature from DB
      * */
     @GetMapping(value = {"/currentWeather/{date}"})
     public WeatherResult currentWeather(@PathVariable String date) {
         //trying to parse string from RequestParam to LocalDate
             return service.getTemperature(new @Valid Input(date));
-    }
-
-
-    //test method
-    @GetMapping(value = {"/ya"})
-    public WeatherResult yaPage() {
-//        int r = service.getYandexTemperature();
-//        String result = "";
-//        if (r >= 0) result = "+";
-//        result += r + "°";
-//        return new WeatherResult(result);
-
-        throw new RuntimeException("testException");
-
     }
 
 

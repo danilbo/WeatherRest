@@ -3,6 +3,13 @@ package com.daniel.staging.controllers.myvalidator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
+
+/**
+ * Violation class
+ * Used to keep information about Violation
+ * */
+
+
 public class Violation {
 
     private final String fieldName;

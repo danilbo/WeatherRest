@@ -30,7 +30,7 @@ public class YandexRepo {
             t = t.substring(0, t.length() - 1);
             if (t.charAt(0) != '+') t = "-" + t.replaceAll("\\D+", "");
         }
-        int temperature = -999;
+        int temperature = -9999;
         try {
             temperature = Integer.parseInt(t);
         } catch (NumberFormatException e) {

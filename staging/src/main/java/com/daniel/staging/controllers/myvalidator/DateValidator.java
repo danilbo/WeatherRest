@@ -8,6 +8,11 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
+/**
+ * My custom validator
+ * Trying to parse String into LocalDate, if there are any exceptions, input is invalid
+ */
+
 public class DateValidator implements ConstraintValidator<Date,String> {
 
     @Override

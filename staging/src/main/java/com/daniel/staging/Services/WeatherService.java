@@ -33,16 +33,9 @@ public class WeatherService {
     private YandexRepo yandexRepo;
 
     /**
-     * return all DB lines
+     * Trying to get information from DB, if there is no line with current date,
+     * parsing yandex.ru and getting weather from the web page, then adding it into DB
      */
-    public String getAll() {
-        return repository.findAll().toString();
-    }
-
-    /**
-     * return lines by date
-     */
-
     public WeatherResult getTemperature(@Valid Input date) {
         try {
             LocalDate ld = createDate(date.getDate());

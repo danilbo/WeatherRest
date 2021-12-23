@@ -16,7 +16,6 @@ public class WeatherEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-
     private Long id;
     @Column(name = "date")
     private LocalDate date;

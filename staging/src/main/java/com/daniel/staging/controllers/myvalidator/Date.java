@@ -22,7 +22,7 @@ import static java.lang.annotation.ElementType.FIELD;
 @Documented
 public @interface Date {
 
-    String message() default "{Date.invalid}";
+    String message() default "{Date.invalid.CurrentDateTypeIs={dd-MM-yyyy}}";
 
     Class<?>[] groups() default { };
 

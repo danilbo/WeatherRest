@@ -20,11 +20,11 @@ public class WeatherEntity {
     @Column(name = "date")
     private LocalDate date;
     @Column(name = "temperature")
-    private int temperature;
+    private String temperature;
 
     public WeatherEntity() {}
 
-    public WeatherEntity(Long id, LocalDate date, int temperature) {
+    public WeatherEntity(Long id, LocalDate date, String temperature) {
         this.id = id;
         this.date = date;
         this.temperature = temperature;
@@ -46,11 +46,11 @@ public class WeatherEntity {
         this.date = date;
     }
 
-    public int getTemperature() {
+    public String getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(int temperature) {
+    public void setTemperature(String temperature) {
         this.temperature = temperature;
     }
 

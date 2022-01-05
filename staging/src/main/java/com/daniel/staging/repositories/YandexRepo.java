@@ -23,20 +23,9 @@ public class YandexRepo {
      * getting element by classname
      * getting temperature
      */
-    public int getTemperature() throws IOException {
+    public String getTemperature() throws IOException {
         Document doc = Jsoup.connect("https://yandex.ru/").get();
         String t = doc.select("div.weather__temp").text();
-        if (t != null && t.length() > 0 && t.charAt(t.length() - 1) == '°') {
-            t = t.substring(0, t.length() - 1);
-            if (t.charAt(0) != '+') t = "-" + t.replaceAll("\\D+", "");
-        }
-        int temperature = -9999;
-        try {
-            temperature = Integer.parseInt(t);
-        } catch (NumberFormatException e) {
-            System.out.println("Parse error!");
-        }
-
-        return temperature;
+        return t;
     }
 }

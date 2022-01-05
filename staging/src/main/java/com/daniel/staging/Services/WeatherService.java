@@ -52,12 +52,12 @@ public class WeatherService {
     /**
      * return yandex temperature
      */
-    public int getYandexTemperature() {
+    public String getYandexTemperature() {
         try {
             return yandexRepo.getTemperature();
         } catch (IOException e) {
             e.printStackTrace();
-            return -999;
+            return "HTML PARSE ERROR!";
         }
     }
 
@@ -65,7 +65,7 @@ public class WeatherService {
      * add new line into DB
      */
     @Transactional
-    public WeatherEntity addHistory(LocalDate date, int temperature) {
+    public WeatherEntity addHistory(LocalDate date, String temperature) {
         WeatherEntity newWeather = new WeatherEntity();
         newWeather.setDate(date);
         newWeather.setTemperature(temperature);
@@ -91,12 +91,7 @@ public class WeatherService {
      * Build JSON response
      */
     public WeatherResult resultBuilder(WeatherEntity weather) {
-
-        String result = "";
-        int t = weather.getTemperature();
-
-        if (t >= 0) result += "+";
-        result += t + "°";
+        String result = weather.getTemperature();
         return new WeatherResult(result);
     }
 }

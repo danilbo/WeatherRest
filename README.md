@@ -7,7 +7,7 @@ if date input was incorrect user will receive readable error mesage
 If dataBase have no line with current date the programm will get current temperature from yandex.ru and add it to dataBase (with date that was input by user)
 
 
-:::::HOW TO USE:::::
+# HOW TO USE
 
 For this project You need postgresql. On the first run table weather_history with columns: id(integer),date(date), temperature(string/varchar) will be generated
 

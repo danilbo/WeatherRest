@@ -25,7 +25,8 @@ Run application with:
 After programm was started You can use it with web-browser by address:
               http://localhost:8080/weather/currentWeather/{date}
               where instead "{date}" should be date like:/22-12-2021
-              !!!IMPORTANT!!!
+
+### Warning
 If You will input date in another format, programm return error(readable error in JSON format)
 Right date format is: dd-MM-yyyy
               
